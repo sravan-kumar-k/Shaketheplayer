@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject obstacle;
+    public GameObject[] obstaclePatterns;
 
     private float timeBtwSpawn;
     public float startTimeBtwSpawn;
@@ -14,9 +14,13 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
+
+
         if (timeBtwSpawn<=0)
         {
-            Instantiate(obstacle, transform.position, transform.rotation);
+            int ran = Random.Range(0, obstaclePatterns.Length);
+
+            Instantiate(obstaclePatterns[ran], transform.position, transform.rotation);
             timeBtwSpawn = startTimeBtwSpawn;
             if ( startTimeBtwSpawn>minTime)
             {

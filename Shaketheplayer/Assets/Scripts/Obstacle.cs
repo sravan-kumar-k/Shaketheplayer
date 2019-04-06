@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    public int damage;
+    private int damage;
     public float speed;
 
+    private void Start()
+    {
+        damage = 1;
+    }
     private void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
@@ -16,8 +20,9 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
-            collision.gameObject.GetComponent<Player>().health -= damage;
-            Destroy(collision.gameObject);
+            collision.GetComponent<Player>().health -= damage;
+            Debug.Log(collision.GetComponent<Player>().health);
+            Destroy(gameObject);
         }
     }
 }
