@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private Vector2 finalPos;
     public float xIncrement;
     public float speed;
+    public Animator camAnim;
 
     public int health=3;
     
@@ -16,7 +17,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-
         if (health==0)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -25,11 +25,14 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D)&& transform.position.x<4)
         {
             finalPos = new Vector2(transform.position.x+ xIncrement, transform.position.y);
+            camAnim.SetTrigger("Shake");
         }
-        if (Input.GetKeyDown(KeyCode.A)&&transform.position.x>-4)
+        else if(Input.GetKeyDown(KeyCode.A)&&transform.position.x>-4)
         {
             finalPos = new Vector2(transform.position.x - xIncrement, transform.position.y);
+            camAnim.SetTrigger("Shake");
         }
+        
         transform.position = Vector2.MoveTowards(transform.position, finalPos, speed * Time.deltaTime);
 
     }

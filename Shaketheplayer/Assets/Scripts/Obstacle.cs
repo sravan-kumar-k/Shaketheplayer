@@ -6,10 +6,13 @@ public class Obstacle : MonoBehaviour
 {
     private int damage;
     public float speed;
-
-    private void Start()
+    public GameObject effect;
+    private Animator camAnim;
+        
+        private void Start()
     {
         damage = 1;
+        camAnim = GameObject.FindGameObjectWithTag("Main Camera").GetComponent<Animator>();
     }
     private void Update()
     {
@@ -20,6 +23,10 @@ public class Obstacle : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            //camAnim.SetTrigger("Shake");
+
+            Instantiate(effect, transform.position, transform.rotation);
+
             collision.GetComponent<Player>().health -= damage;
             Debug.Log(collision.GetComponent<Player>().health);
             Destroy(gameObject);
