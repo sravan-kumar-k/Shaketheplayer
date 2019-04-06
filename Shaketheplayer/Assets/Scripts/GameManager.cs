@@ -14,8 +14,6 @@ public class GameManager : MonoBehaviour
     
     void Update()
     {
-
-
         if (timeBtwSpawn<=0)
         {
             int ran = Random.Range(0, obstaclePatterns.Length);

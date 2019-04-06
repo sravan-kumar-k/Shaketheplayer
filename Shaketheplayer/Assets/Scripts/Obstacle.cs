@@ -4,16 +4,10 @@ using UnityEngine;
 
 public class Obstacle : MonoBehaviour
 {
-    private int damage;
+    private int damage=1;
     public float speed;
     public GameObject effect;
-    private Animator camAnim;
         
-        private void Start()
-    {
-        damage = 1;
-        camAnim = GameObject.FindGameObjectWithTag("Main Camera").GetComponent<Animator>();
-    }
     private void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);

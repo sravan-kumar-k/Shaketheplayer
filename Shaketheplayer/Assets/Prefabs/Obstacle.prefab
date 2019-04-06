@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2404258417287171259}
   - component: {fileID: 2404258417287171256}
+  - component: {fileID: 147622817024093744}
   - component: {fileID: 2404258417287171257}
-  - component: {fileID: 2404258417287171262}
+  - component: {fileID: 2658022851334356049}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47,6 +48,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   effect: {fileID: 3329230086218682577, guid: ae0f67e8ac3b67140ae16fbbe52dbc1d, type: 3}
+--- !u!114 &147622817024093744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2404258417287171263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f36a21044bd590e468ae43d4a0138314, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3.5
 --- !u!212 &2404258417287171257
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -95,8 +109,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &2404258417287171262
-CircleCollider2D:
+--- !u!61 &2658022851334356049
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -109,5 +123,15 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
   serializedVersion: 2
-  m_Radius: 0.08
+  m_Size: {x: 0.1, y: 0.1}
+  m_EdgeRadius: 0.03
