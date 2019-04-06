@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private Vector2 finalPos;
     public float xIncrement;
     public float speed;
+
+    public int health;
     
     void Start()
     {
