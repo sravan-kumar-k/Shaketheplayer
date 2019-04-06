@@ -6,13 +6,9 @@ using UnityEngine.SceneManagement;
 public class Restart : MonoBehaviour
 {
 
-    private void Update()
+    public void Reload()
     {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             Time.timeScale = 1f;
-        }
-        
     }
 }
