@@ -6,6 +6,7 @@ public class UserInterface : MonoBehaviour
 {
     public void NewGame()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Main");
     }
 }
