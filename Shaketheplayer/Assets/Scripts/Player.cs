@@ -34,20 +34,18 @@ public class Player : MonoBehaviour
 
     public void MoveRight()
     {
-        if (Input.GetKeyDown(KeyCode.D)&& transform.position.x<4)
-        {
+       if (Input.GetKeyDown(KeyCode.D)&& transform.position.x<4)
+        
             finalPos = new Vector2(transform.position.x+ xIncrement, transform.position.y);
             camAnim.SetTrigger("Shake");
-        }
+
 
     }
 
     public void MoveLeft()
     {
-       if(Input.GetKeyDown(KeyCode.A)&&transform.position.x>-4)
-       {
+        if(Input.GetKeyDown(KeyCode.A)&&transform.position.x>-4)
             finalPos = new Vector2(transform.position.x - xIncrement, transform.position.y);
             camAnim.SetTrigger("Shake");
-      }
     }
 }
