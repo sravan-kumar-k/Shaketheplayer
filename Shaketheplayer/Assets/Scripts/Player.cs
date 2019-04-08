@@ -12,7 +12,7 @@ public class Player : MonoBehaviour
     public float speed;
     public Animator camAnim;
     public TextMeshProUGUI healthDisplay;
-    public int health=3;
+    public int health=100;
     public GameObject gameOver;
 
     void Update()
@@ -23,29 +23,25 @@ public class Player : MonoBehaviour
             gameOver.SetActive(true);
             Destroy(gameObject);
             Time.timeScale = 0f;
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         MoveRight();
         MoveLeft();
-        transform.position = Vector2.MoveTowards(transform.position, finalPos, speed * Time.deltaTime);
 
+        transform.position = Vector2.MoveTowards(transform.position, finalPos, speed * Time.deltaTime);
     }
 
     public void MoveRight()
     {
        if (Input.GetKeyDown(KeyCode.D)&& transform.position.x<4)
-        
-            finalPos = new Vector2(transform.position.x+ xIncrement, transform.position.y);
-            camAnim.SetTrigger("Shake");
-
-
+        finalPos = new Vector2(transform.position.x+ xIncrement, transform.position.y);
+         camAnim.SetTrigger("Shake");
     }
 
     public void MoveLeft()
     {
         if(Input.GetKeyDown(KeyCode.A)&&transform.position.x>-4)
-            finalPos = new Vector2(transform.position.x - xIncrement, transform.position.y);
-            camAnim.SetTrigger("Shake");
+         finalPos = new Vector2(transform.position.x - xIncrement, transform.position.y);
+         camAnim.SetTrigger("Shake");
     }
 }

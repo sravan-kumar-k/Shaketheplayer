@@ -11,7 +11,6 @@ public class GameManager : MonoBehaviour
     public float decreaseTime;
     public float minTime;
 
-    
     void Update()
     {
         if (timeBtwSpawn<=0)
@@ -20,7 +19,7 @@ public class GameManager : MonoBehaviour
 
             Instantiate(obstaclePatterns[ran], transform.position, transform.rotation);
             timeBtwSpawn = startTimeBtwSpawn;
-            if ( startTimeBtwSpawn>minTime)
+            if (startTimeBtwSpawn>minTime)
             {
                 startTimeBtwSpawn -= decreaseTime;
             }

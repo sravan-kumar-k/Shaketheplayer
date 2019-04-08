@@ -32,8 +32,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle"))
         {
-            score++;
-            Debug.Log(score);
+           // Debug.Log(score);
         }
     }
 
