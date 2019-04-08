@@ -32,7 +32,8 @@ public class ScoreManager : MonoBehaviour
     {
         if (collision.CompareTag("Obstacle"))
         {
-           // Debug.Log(score);
+            score++;
+            Debug.Log(score);
         }
     }
 
@@ -44,8 +45,11 @@ public class ScoreManager : MonoBehaviour
              PlayerPrefs.SetInt("Highscore", score); 
             highscoreDisplay.text = score.ToString();
         }
+    }
 
-
-
+    public void reset()
+    {
+        PlayerPrefs.DeleteKey("Highscore");
+        highscoreDisplay.text = "0";
     }
 }

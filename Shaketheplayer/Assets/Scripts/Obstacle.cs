@@ -8,13 +8,6 @@ public class Obstacle : MonoBehaviour
     public float speed;
     public GameObject effect;
 
-    private AudioSource audioSource;
-
-    private void Awake()
-    {
-        audioSource = GetComponent<AudioSource>();
-    }
-
     private void Update()
     {
         transform.Translate(Vector2.down * speed * Time.deltaTime);
@@ -25,17 +18,10 @@ public class Obstacle : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             Instantiate(effect, transform.position, transform.rotation);
-            audioSource.Play();
+
             collision.GetComponent<Player>().health -= damage;
             Debug.Log(collision.GetComponent<Player>().health);
             Destroy(gameObject);
         }
     }
-
-    //void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Player")
-    //        Debug.Log(collision.gameObject.name);
-    //        audioSource.Play();
-    //}
 }
